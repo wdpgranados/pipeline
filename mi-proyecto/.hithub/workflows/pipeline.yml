@@ -1,0 +1,20 @@
+name: Mi Primer Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar mensaje
+        run: echo "Hola William, tu pipeline funciona correctamente"
+
+      - name: Mostrar versión de Python
+        run: python --version
